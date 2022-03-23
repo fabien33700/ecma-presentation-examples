@@ -1,0 +1,22 @@
+DONE ES2019 Array.flat, flatMap, Object.entries (exemple avec Map)
+DONE ES2020 Finir optional chaining
+DONE ES2020 Imports dynamiques
+DONE ES2020 BigInt (explications)
+DONE ES2020 Promise.allSettled()
+DONE ES2020 globalThis
+DONE ES2020 String.prototype.matchAll()
+DONE ES2021 Promise.any()
+DONE ES2021 Opérateur d'affectation logiques + ??=
+DONE ES2021 Séparateur numérique
+DONE ES2022 Champs de classes
+DONE ES2022 Array.at()
+DONE ESnext stage 2 pipeline
+DONE ESnext stage 2 throw expressions
+
+DONE Temporal (explications)
+DONE Decorators (exemples)
+DONE Pipeline (exemples, intérêt)
+
+TODO Proposition typage discret
+TODO Page ressources + liens utiles
+TODO Mettre ce dépôt sur Github
