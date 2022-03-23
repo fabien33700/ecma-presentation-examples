@@ -8,9 +8,9 @@ const reDate = /(?<date>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z)/;
 const reLevel = /\[\s*(?<level>fatal|error|warn|info|debug|silly)+\s*\]/;
 const reMessage = /(?<message>.*)/;
 
-const regex = new RegExp([reDate, reLevel, reMessage].map(re => re.source).join('\\s+'), 'gmi');
+const regexp = new RegExp([reDate, reLevel, reMessage].map(re => re.source).join('\\s+'), 'gmi');
 
-for (const match of logs.matchAll(regex)) { 
+function displayLogDetails(match) {
   const [globalMatch] = match;
   const { index, groups: { date, level, message } } = match;
 
@@ -23,6 +23,18 @@ for (const match of logs.matchAll(regex)) {
   console.log(`-----------------------------`);
 }
 
-// TODO Exemple avant cette feature
-// TODO Exemple sans groupe nommés
-// TODO Démontrer le caractère stateful de l'itérateur
+let matches = logs.matchAll(regexp);
+for (const match of matches) { 
+  displayLogDetails(match);
+}
+
+// l'itérateur est stateful, il faut en régénérer un pour reproduire l'itération
+for (const match of matches) { 
+  console.log('on ne passe pas ici', match);
+}
+
+
+// Avant cette feature 
+while ((match = regexp.exec(logs)) !== null) {
+  displayLogDetails(match);
+}

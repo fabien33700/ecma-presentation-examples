@@ -1,8 +1,8 @@
 // Array.prototype.flat()
 const array = [1, [2, [3, [4]]]];
-console.log(array.flat());
-console.log(array.flat(2));
-console.log(array.flat(3));
+console.log(1, array.flat());
+console.log(2, array.flat(2));
+console.log(3, array.flat(3));
 
 // Array.prototype.flatMap()
 const sentences = `
@@ -12,6 +12,6 @@ const sentences = `
 const words = sentences.split('\n')
   .flatMap(sentence => sentence.split(' '))
   .filter(word => word);
-console.log(words);
+console.log(4, words);
 
 

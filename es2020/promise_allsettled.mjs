@@ -14,3 +14,10 @@ try {
 // 2 - Promise.allSettled()
 const results = await Promise.allSettled(promises);
 console.log(2, results);
+
+// Implémentation de allSettled
+await Promise.all(
+  promises.map((p) => p
+    .then((value) => ({ status: 'fulfilled', value }))
+    .catch((reason) => ({ status: 'rejected', reason })))
+  )
