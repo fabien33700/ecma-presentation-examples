@@ -24,7 +24,7 @@ const service = {
 }
 
 async function waitForJobFinished() {
-  const maxAttempts = 4;
+  const maxAttempts = 5;
   let jobFinished = false;
   for await (const i of retry(maxAttempts, 1000)) {
     console.log(`Attempt no. ${i}`)
